@@ -17,7 +17,7 @@ env:
   # Custom Nuget Source
   IS_COMMUNITY_TOOLKIT_NUGET_SOURCE_ENABLED: false
   IS_CUSTOM_NUGET_SOURCE_ENABLED: false
-  CUSTOM_NUGET_SOURCES: '' # Example ('https://api.nuget.org/v3/index.json, https://api.nuget.org/v2/index.json,...')
+  CUSTOM_NUGET_SOURCES: 'https://api.nuget.org/v3/index.json' # Example ('https://api.nuget.org/v3/index.json, https://api.nuget.org/v2/index.json,...')
 
   # Configuring Dotnet Build Commands
   PUBLISH_OUTPUT_FOLDER: Publish
@@ -46,10 +46,12 @@ jobs:
         platform: [x86, x64, ARM64] # Change platform if you want to build only a specific platform
 
     steps:
+    - name: Checkout code
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        
+
+    - name: Setup .NET
     - uses: actions/setup-dotnet@v4
       with:
        dotnet-version: '8.0.x'
