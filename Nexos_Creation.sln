@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35017.193
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexos_Creation", "Nexos_Creation.csproj", "{D3D5D9EF-C109-4189-B71A-2002EE8BB763}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0587C3AF-F3DA-4B29-BCED-F09DFF61CFC0}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.github\workflows\dotnet-release.yml = .github\workflows\dotnet-release.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|ARM64.Build.0 = Debug|ARM64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|x64.ActiveCfg = Debug|x64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|x64.Build.0 = Debug|x64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|x64.Deploy.0 = Debug|x64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|x86.ActiveCfg = Debug|x86
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|x86.Build.0 = Debug|x86
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Debug|x86.Deploy.0 = Debug|x86
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|ARM64.ActiveCfg = Release|ARM64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|ARM64.Build.0 = Release|ARM64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|ARM64.Deploy.0 = Release|ARM64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|x64.ActiveCfg = Release|x64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|x64.Build.0 = Release|x64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|x64.Deploy.0 = Release|x64
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|x86.ActiveCfg = Release|x86
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|x86.Build.0 = Release|x86
+		{D3D5D9EF-C109-4189-B71A-2002EE8BB763}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {100BCD65-1126-4CEA-BD0D-C29373019AE1}
+	EndGlobalSection
+EndGlobal

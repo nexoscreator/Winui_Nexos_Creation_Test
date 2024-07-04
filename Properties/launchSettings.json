@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Nexos_Creation (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Nexos_Creation (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

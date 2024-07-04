@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="Nexos_Creation.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wuc="using:WinUICommunity"
+    mc:Ignorable="d">
+    <ScrollView
+        Margin="{ThemeResource ContentPageMargin}"
+        HorizontalAlignment="Stretch"
+        VerticalScrollBarVisibility="Auto">
+        <StackPanel
+            Margin="10"
+            wuc:PanelAttach.ChildrenTransitions="Default"
+            Spacing="5">
+            <wuc:SettingsCard x:Name="GeneralSetting"
+                              Command="{x:Bind ViewModel.GoToSettingPageCommand}"
+                              CommandParameter="{Binding ElementName=GeneralSetting}"
+                              Description="Change your app Settings"
+                              Header="General"
+                              HeaderIcon="{wuc:BitmapIcon Source=Assets/Fluent/settings.png}"
+                              IsClickEnabled="True"
+                              Tag="GeneralSettingPage" />
+            <wuc:SettingsCard x:Name="ThemeSetting"
+                              Command="{x:Bind ViewModel.GoToSettingPageCommand}"
+                              CommandParameter="{Binding ElementName=ThemeSetting}"
+                              Description="Explore the different ways to customize the appearance and behavior of your app. You can change the material, theme, accent, and more options to suit your style and preference."
+                              Header="Appearance &amp; behavior"
+                              HeaderIcon="{wuc:BitmapIcon Source=Assets/Fluent/theme.png}"
+                              IsClickEnabled="True"
+                              Tag="ThemeSettingPage" />
+            <wuc:SettingsExpander Description="Report Problems, Suggest a feature, Report translation problems"
+   Header="Feedback"
+   HeaderIcon="{wuc:FontIcon Glyph=&#xED15;}">
+                <wuc:SettingsExpander.Items>
+                    <wuc:SettingsCard Header="Describe the issue you encountered or the bug you found.">
+                        <HyperlinkButton Margin="0,8,0,0"
+                 Content="Report a Problem" />
+                    </wuc:SettingsCard>
+                    <wuc:SettingsCard Header="Tell us what new feature you would like to see in the application.">
+                        <HyperlinkButton Margin="0,8,0,0"
+Content="Suggest a Feature" />
+                    </wuc:SettingsCard>
+                    <wuc:SettingsCard Header="A basic SettingsCard within an SettingsExpander">
+                        <HyperlinkButton Margin="0,8,0,0"
+Content="Send feedback" />
+                    </wuc:SettingsCard>
+                </wuc:SettingsExpander.Items>
+            </wuc:SettingsExpander>
+            <wuc:SettingsCard x:Name="AppUpdateSetting"
+                              Command="{x:Bind ViewModel.GoToSettingPageCommand}"
+                              CommandParameter="{Binding ElementName=AppUpdateSetting}"
+                              Description="Check for Updates and Ricive early updates."
+                              Header="Update App"
+                              HeaderIcon="{wuc:BitmapIcon Source=Assets/Fluent/update.png}"
+                              IsClickEnabled="True"
+                              Tag="AppUpdateSettingPage" />
+            <!-- Account Settings Card -->
+            <wuc:SettingsCard x:Name="settingsCard"
+                               Description="Manage your account details, profile information, and privacy settings."
+                               Header="Account Settings"
+                               HeaderIcon="{wuc:FontIcon Glyph=&#xE77B;}"
+                               IsClickEnabled="True"
+                               IsEnabled="True" />
+            <!-- Theme Preferences Card -->
+            <wuc:SettingsCard Description="Customize the appearance and colors of the application."
+                       Header="Theme Preferences"
+                       HeaderIcon="{wuc:FontIcon Glyph=&#xE790;}">
+                <ComboBox SelectedIndex="0">
+                    <ComboBoxItem>Dark</ComboBoxItem>
+                    <ComboBoxItem>Light</ComboBoxItem>
+                    <ComboBoxItem>Default</ComboBoxItem>
+                </ComboBox>
+            </wuc:SettingsCard>
+            <!-- Experimental Features Card -->
+            <wuc:SettingsExpander Description="Try out new features that are in development or testing."
+                   Header="Experiment Feature"
+                   HeaderIcon="{wuc:FontIcon Glyph=&#xEA80;}">
+                <wuc:SettingsExpander.Items>
+                    <wuc:SettingsCard Header="A basic SettingsCard within an SettingsExpander">
+                        <Button Content="Button" />
+                    </wuc:SettingsCard>
+                </wuc:SettingsExpander.Items>
+            </wuc:SettingsExpander>
+            <wuc:SettingsCard x:Name="AboutSetting"
+                              Command="{x:Bind ViewModel.GoToSettingPageCommand}"
+                              CommandParameter="{Binding ElementName=AboutSetting}"
+                              Description="About Nexos_Creation and Developer"
+                              Header="About us"
+                              HeaderIcon="{wuc:BitmapIcon Source=Assets/Fluent/info.png}"
+                              IsClickEnabled="True"
+                              Tag="AboutUsSettingPage" />
+            <InfoBar Margin="0,10" Grid.Row="1" IsOpen="True" Severity="Informational" Title="More Option"
+    Message="Explore additional settings and features is coming soon!" />
+        </StackPanel>
+    </ScrollView>
+</Page>
+

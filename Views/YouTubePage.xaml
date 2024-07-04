@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Nexos_Creation.Views.YouTubePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Nexos_Creation.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wuc="using:WinUICommunity"
+    mc:Ignorable="d">
+    <ScrollView
+    Margin="{ThemeResource ContentPageMargin}"
+    HorizontalAlignment="Stretch"
+    VerticalScrollBarVisibility="Auto">
+        <StackPanel x:Name="ContentArea" 
+        Margin="10"
+        wuc:PanelAttach.ChildrenTransitions="Default"
+        Spacing="5">
+            <Grid HorizontalAlignment="Stretch" ColumnSpacing="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" CornerRadius="50" BorderThickness="2" BorderBrush="Black">
+                    <Image x:Name="ChannelThumbline" Width="96" Height="96"/>
+                </Border>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="4">
+                    <TextBlock x:Name="ChannelTitleTextBlock"  Style="{StaticResource TitleTextBlockStyle}"/>
+                    <TextBlock Text="870 Subscribers" Style="{StaticResource CaptionTextBlockStyle}"/>
+                </StackPanel>
+                <HyperlinkButton Grid.Column="2" x:Name="ChannelSubscibeBtn" Content="Subscribe" HorizontalAlignment="Right" Margin="{StaticResource AppBarButtonTextLabelOnRightMargin}"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="Video List"  Style="{StaticResource BodyStrongTextBlockStyle}" Margin="{StaticResource AppBarSeparatorMargin}"/>
+                    <GridView x:Name="videoGridView" SelectionMode="Single" IsItemClickEnabled="True" ItemClick="VideoGridView_ItemClick">
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="5"/>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Width="260" Height="240" Margin="10" >
+                                    <Image Source="{Binding ThumbnailUrl}" Width="320" Height="180" Margin="0,10,0,5"/>
+                                    <TextBlock Text="{Binding Duration}" Style="{StaticResource CaptionTextBlockStyle}" HorizontalAlignment="Right" Margin="15,-25"/>
+                                    <TextBlock Text="{Binding Title}" Margin="10,5,10,5" TextTrimming="WordEllipsis" MaxLines="2" TextWrapping="WrapWholeWords" Style="{StaticResource CaptionTextBlockStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <TextBlock x:Name="PlayListVideoTitle" Style="{StaticResource BodyStrongTextBlockStyle}" Margin="{StaticResource AppBarSeparatorMargin}"/>
+                    <ListView x:Name="PlayListView" SelectionMode="None" ShowsScrollingPlaceholders="True" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsStackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="5">
+                                    <Image Source="{Binding ThumbnailUrl}" Width="190" Height="130" Margin="0,0,0,5" />
+                                    <TextBlock Text="{Binding Title}" Margin="0,5,0,0"  Style="{StaticResource CaptionTextBlockStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        </ScrollView>
+</Page>

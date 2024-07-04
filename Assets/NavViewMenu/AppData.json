@@ -1,0 +1,130 @@
+﻿{
+  "Groups": [
+    {
+      "UniqueId": "Nexos_Creation",
+      "Title": "Nexos_Creation",
+      "ImagePath": "ms-appx:///Assets/icon.png",
+      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "IsSpecialSection": true,
+      "ShowItemsWithoutGroup": false,
+      "IsExpanded": false,
+      "Items": [
+        {
+          "UniqueId": "Nexos_Creation.Views.YouTubePage",
+          "Title": "Youtube",
+          "Subtitle": "you can use ApplicationDataContainerHelper for saving and loading application settings.",
+          "ImagePath": "ms-appx:///Assets/icon.png",
+          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "IsUpdated": true,
+          "IncludedInBuild": true,
+          "Links": [
+            {
+              "Title": "ApplicationDataContainerPage",
+              "Uri": "https://ghost1372.github.io/WinUICommunity/helpers/applicationDataContainerHelper/"
+            }
+          ],
+          "Extra": [
+            "AppBarToggleButton",
+            "AppBarSeparator",
+            "CommandBar"
+          ]
+        },
+        {
+          "UniqueId": "Nexos_Creation.Views.ToolsPage",
+          "Title": "Test Title",
+          "Subtitle": "you can use AppNotificationPage for Sending Toast Notification.",
+          "ImagePath": "ms-appx:///Assets/icon.png",
+          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "IsUpdated": true,
+          "IncludedInBuild": true
+        },
+        {
+          "UniqueId": "Nexos_Creation.Views.ToolsPage",
+          "Title": "Test Title",
+          "Subtitle": "you can use AppNotificationPage for Sending Toast Notification.",
+          "ImagePath": "ms-appx:///Assets/icon.png",
+          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "IsNew": true,
+          "IncludedInBuild": true
+        },
+        {
+          "UniqueId": "Nexos_Creation.Views.ToolsPage",
+          "Title": "Test Title",
+          "Subtitle": "you can use AppNotificationPage for Sending Toast Notification.",
+          "ImagePath": "ms-appx:///Assets/icon.png",
+          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "IsPreview": true,
+          "IncludedInBuild": true
+        }
+      ]
+    },
+    {
+      "UniqueId": "Nexos_Creation.Views.HomeLandingPage",
+      "Title": "Dashboard",
+      "ImagePath": "ms-appx:///Assets/icon.png",
+      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "HideItem": false
+    },
+    {
+      "UniqueId": "Nexos_Creation",
+      "Title": "Our Website",
+      "ImagePath": "ms-appx:///Assets/icon.png",
+      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "ShowItemsWithoutGroup": false,
+      "IsExpanded": false,
+      "Items": [
+        {
+          "UniqueId": "Nexos_Creation.Views.Website.Nexos_CreatorPage",
+          "Title": "Nexos Creator",
+          "Subtitle": "Explore Our Website",
+          "ImagePath": "ms-appx:///Assets/icon.png",
+          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "HideItem": false
+        },
+        {
+          "UniqueId": "Nexos_Creation.Views.Website.Nexos_CreationPage",
+          "Title": "Nexos Creation",
+          "Subtitle": "Explore Our Website",
+          "ImagePath": "ms-appx:///Assets/icon.png",
+          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "HideItem": false
+        },
+        {
+          "UniqueId": "Nexos_Creation.Views.Website.Nexos_CrafterPage",
+          "Title": "Nexos Crafter",
+          "Subtitle": "Explore Our Website",
+          "ImagePath": "ms-appx:///Assets/icon.png",
+          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "HideItem": false
+        }
+      ]
+    },
+    {
+      "UniqueId": "Nexos_Creation.Views.YouTubePage",
+      "Title": "YouTube",
+      "Subtitle": "Watch our Videos",
+      "ImagePath": "ms-appx:///Assets/icon.png",
+      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "Order": false,
+      "HideItem": false
+    },
+    {
+      "UniqueId": "Nexos_Creation.Views.ToolsPage",
+      "Title": "Tools",
+      "Subtitle": "Explore powerfull Tools",
+      "ImagePath": "ms-appx:///Assets/icon.png",
+      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "Order": false,
+      "HideItem": false
+    },
+    {
+      "UniqueId": "Nexos_Creation.Views.DownloadPage",
+      "Title": "Download",
+      "Subtitle": "Get our all software",
+      "ImagePath": "ms-appx:///Assets/icon.png",
+      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "IsFooterNavigationViewItem": true,
+      "HideItem": false
+    }
+  ]
+}
