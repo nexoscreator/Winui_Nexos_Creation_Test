@@ -30,7 +30,6 @@
     <AppInstallerUri>https://www.nexoscreation.com/download</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxBundlePlatforms>x86|x64|arm64</AppxBundlePlatforms>
-    <AppxPackageDir>C:\Users\nexos\Downloads\Nexos_Creation\</AppxPackageDir>
   </PropertyGroup>
   <ItemGroup>
     <None Include="Assets\**\*">
