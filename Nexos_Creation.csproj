@@ -37,16 +37,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="NewFolder1\**" />
-    <Compile Remove="NewFolder\**" />
-    <EmbeddedResource Remove="NewFolder1\**" />
-    <EmbeddedResource Remove="NewFolder\**" />
-    <None Remove="NewFolder1\**" />
-    <None Remove="NewFolder\**" />
-    <Page Remove="NewFolder1\**" />
-    <Page Remove="NewFolder\**" />
-  </ItemGroup>
-  <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
   <!-- 
@@ -121,11 +111,5 @@
     <Page Update="Views\YouTubePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Remove="NewFolder1\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Remove="NewFolder\**" />
   </ItemGroup>
 </Project>
