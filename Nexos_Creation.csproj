@@ -24,27 +24,18 @@
     <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
     <AppInstallerUri>https://www.nexoscreation.com/download</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxBundlePlatforms>x86|x64|arm64</AppxBundlePlatforms>
+    <AppxPackageDir>C:\Users\nexos\Downloads\Nexos_Creation\</AppxPackageDir>
   </PropertyGroup>
   <ItemGroup>
     <None Include="Assets\**\*">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="NewFolder1\**" />
-    <Compile Remove="NewFolder\**" />
-    <EmbeddedResource Remove="NewFolder1\**" />
-    <EmbeddedResource Remove="NewFolder\**" />
-    <None Remove="NewFolder1\**" />
-    <None Remove="NewFolder\**" />
-    <Page Remove="NewFolder1\**" />
-    <Page Remove="NewFolder\**" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
@@ -121,11 +112,5 @@
     <Page Update="Views\YouTubePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Remove="NewFolder1\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Remove="NewFolder\**" />
   </ItemGroup>
 </Project>
