@@ -46,7 +46,6 @@ jobs:
         platform: [x86, x64, ARM64] # Change platform if you want to build only a specific platform
 
     steps:
-    - name: Checkout code
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
