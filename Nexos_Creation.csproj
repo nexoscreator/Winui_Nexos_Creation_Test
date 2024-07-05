@@ -29,8 +29,7 @@
     <AppxBundle>Always</AppxBundle>
     <AppInstallerUri>https://www.nexoscreation.com/download</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <AppxBundlePlatforms>x86|x64|arm64</AppxBundlePlatforms>
-    <WindowsPackageType>None</WindowsPackageType>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <AppxPackageDir>C:\Users\nexos\source\repos\Nexos_Creation\bin\</AppxPackageDir>
   </PropertyGroup>
   <ItemGroup>

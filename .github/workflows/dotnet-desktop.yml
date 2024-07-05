@@ -1,11 +1,13 @@
+﻿# This workflow will build, sign, and package a WinUI 3 MSIX desktop application
+# built on .NET.
 
-name: .NET Core Desktop
+name: WinUI 3 MSIX app
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ main ]
 
 jobs:
 
@@ -13,61 +15,61 @@ jobs:
 
     strategy:
       matrix:
-        configuration: [x86, x64]
-        
+        configuration: [Release]
+        platform: [x64, x86]
+
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
-      SigningCertificate: Nexos_Creation_TemporaryKey.pfx
-      Solution_Name: Nexos_Creation.sln                               # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: Nexos_Creation.csproj                        # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Wap_Project_Directory: Nexos_Creation.Package                   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      Wap_Project_Path: Nexos_Creation.csproj                         # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
-      Wap_Project_Name: Nexos_Creation.Package.wapproj
+      Solution_Name: Nexos_Creation.sln              # Replace with your solution name, i.e. App1.sln.
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
       with:
         fetch-depth: 0
 
     # Install the .NET Core workload
     - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 6.0.x
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v2
-
-    # Execute all unit tests in the solution
-    - name: Execute unit tests
-      run: dotnet test $env:Test_Project_Path
+      uses: microsoft/setup-msbuild@v1.0.2
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=Debug /p:Platform="Any CPU"
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
       env:
-        Configuration: win-${{ matrix.targetplatform }}
-
-    # Create the app package by building and packaging the Windows Application Packaging project
-    - name: Create the app package
-      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
-      env:
-        Appx_Bundle: Always
-        Appx_Bundle_Platforms: x86|x64
-        Appx_Package_Build_Mode: StoreUpload
         Configuration: ${{ matrix.configuration }}
+
+    # Decode the base 64 encoded pfx and save the Signing_Certificate
+    - name: Decode the pfx
+      run: |
+        $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.BASE64_ENCODED_PFX }}")
+        $certificatePath = "GitHubActionsWorkflow.pfx"
+        [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
+
+    # Create the app package by building and packaging the project
+    - name: Create the app package
+      run: msbuild $env:Solution_Name /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:AppxPackageDir="$env:Appx_Package_Dir" /p:GenerateAppxPackageOnBuild=true
+      env:
+        Appx_Bundle: Never
+        Appx_Package_Build_Mode: SideloadOnly
+        Appx_Package_Dir: Packages\
+        Configuration: ${{ matrix.configuration }}
+        Platform: ${{ matrix.platform }}
 
     # Remove the pfx
     - name: Remove the pfx
-      run: Remove-Item -path $env:Wap_Project_Directory\Nexos_Creation_TemporaryKey.pfx
+      run: Remove-Item -path GitHubActionsWorkflow.pfx
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+    - name: Upload MSIX package
+      uses: actions/upload-artifact@v2
       with:
         name: MSIX Package
-        path: ${{ env.Wap_Project_Directory }}\AppPackages
+        path: ${{ env.Solution_Name }}\\Packages
