@@ -10,7 +10,7 @@
   <Identity
     Name="56914988-fa4e-43cd-9047-8652f31c3914"
     Publisher="CN=nexos creator"
-    Version="1.0.1.0" />
+    Version="1.0.3.0" />
 
   <mp:PhoneIdentity PhoneProductId="56914988-fa4e-43cd-9047-8652f31c3914" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
