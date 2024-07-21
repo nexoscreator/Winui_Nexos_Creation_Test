@@ -61,15 +61,15 @@
     {
       "UniqueId": "Nexos_Creation.Views.HomeLandingPage",
       "Title": "Dashboard",
-      "ImagePath": "ms-appx:///Assets/icon.png",
-      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "ImagePath": "ms-appx:///Assets/Fluent/home.svg",
+      "ImageIconPath": "ms-appx:///Assets/Fluent/home.svg",
       "HideItem": false
     },
     {
       "UniqueId": "Nexos_Creation",
       "Title": "Our Website",
-      "ImagePath": "ms-appx:///Assets/icon.png",
-      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "ImagePath": "ms-appx:///Fluent/folder.svg",
+      "ImageIconPath": "ms-appx:///Assets/Fluent/folder.svg",
       "ShowItemsWithoutGroup": false,
       "IsExpanded": false,
       "Items": [
@@ -77,24 +77,24 @@
           "UniqueId": "Nexos_Creation.Views.Website.Nexos_CreatorPage",
           "Title": "Nexos Creator",
           "Subtitle": "Explore Our Website",
-          "ImagePath": "ms-appx:///Assets/icon.png",
-          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "ImagePath": "ms-appx:///Assets/Fluent/document_add.png",
+          "ImageIconPath": "ms-appx:///Assets/Fluent/document_add.png",
           "HideItem": false
         },
         {
           "UniqueId": "Nexos_Creation.Views.Website.Nexos_CreationPage",
           "Title": "Nexos Creation",
           "Subtitle": "Explore Our Website",
-          "ImagePath": "ms-appx:///Assets/icon.png",
-          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "ImagePath": "ms-appx:///Assets/Fluent/document_add.png",
+          "ImageIconPath": "ms-appx:///Assets/Fluent/document_add.png",
           "HideItem": false
         },
         {
           "UniqueId": "Nexos_Creation.Views.Website.Nexos_CrafterPage",
           "Title": "Nexos Crafter",
           "Subtitle": "Explore Our Website",
-          "ImagePath": "ms-appx:///Assets/icon.png",
-          "ImageIconPath": "ms-appx:///Assets/icon.png",
+          "ImagePath": "ms-appx:///Assets/Fluent/document_add.png",
+          "ImageIconPath": "ms-appx:///Assets/Fluent/document_add.png",
           "HideItem": false
         }
       ]
@@ -103,8 +103,8 @@
       "UniqueId": "Nexos_Creation.Views.YouTubePage",
       "Title": "YouTube",
       "Subtitle": "Watch our Videos",
-      "ImagePath": "ms-appx:///Assets/icon.png",
-      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "ImagePath": "ms-appx:///Assets/Fluent/play.svg",
+      "ImageIconPath": "ms-appx:///Assets/Fluent/play.svg",
       "Order": false,
       "HideItem": false
     },
@@ -112,8 +112,8 @@
       "UniqueId": "Nexos_Creation.Views.ToolsPage",
       "Title": "Tools",
       "Subtitle": "Explore powerfull Tools",
-      "ImagePath": "ms-appx:///Assets/icon.png",
-      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "ImagePath": "ms-appx:///Assets/Fluent/dev_tools.png",
+      "ImageIconPath": "ms-appx:///Assets/Fluent/dev_tools.png",
       "Order": false,
       "HideItem": false
     },
@@ -121,8 +121,8 @@
       "UniqueId": "Nexos_Creation.Views.DownloadPage",
       "Title": "Download",
       "Subtitle": "Get our all software",
-      "ImagePath": "ms-appx:///Assets/icon.png",
-      "ImageIconPath": "ms-appx:///Assets/icon.png",
+      "ImagePath": "ms-appx:///Assets/Fluent/download.svg",
+      "ImageIconPath": "ms-appx:///Assets/Fluent/download.svg",
       "IsFooterNavigationViewItem": true,
       "HideItem": false
     }

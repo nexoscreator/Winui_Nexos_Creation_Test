@@ -38,6 +38,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="Assets\Fluent\dev_tools.png" />
+    <Content Remove="Assets\Fluent\dev_tools.svg" />
+    <Content Remove="Assets\Fluent\document_add.svg" />
+    <Content Remove="Assets\Fluent\download.svg" />
+    <Content Remove="Assets\Fluent\folder.svg" />
+    <Content Remove="Assets\Fluent\home.svg" />
+    <Content Remove="Assets\Fluent\image.svg" />
+    <Content Remove="Assets\Fluent\play.svg" />
+    <Content Remove="Assets\Fluent\settings.svg" />
+    <Content Remove="Assets\Fluent\tab_desktop.png" />
+    <Content Remove="Assets\Fluent\video_clip.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
   <!-- 
